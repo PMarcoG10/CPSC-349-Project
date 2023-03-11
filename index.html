@@ -16,6 +16,26 @@
         <div class="toggle_button">
             <input type="checkbox" onclick="changeBackground()"/>
         </div>
+
+        <!-- This Section will be for the music-->
+        <div class="music_player">
+            <audio id="audio-player" controls>
+                <source src="/music/Soul.mp3" type="audio/mpeg">
+                <source src="/music/DO-IT.mp3" type="audio/mpeg">
+                <source src="/music/Lazy-Afternoon.mp3" type="audio/mpeg">
+                <source src="/music/silent-wood.mp3" type="audio/mpeg">
+                <source src="/music/Whistle.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="music_controls" id="audio-controls">
+            <button id="play-pause-btn">Play</button>
+            <button id="skip-btn">Skip</button>
+            <button id="repeat-btn">Repeat</button>
+        </div>
+
+        <div id="song-title"></div>
+
     </body>
 
 </html>
