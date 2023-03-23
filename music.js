@@ -1,10 +1,11 @@
 /* This will be for the music*/
-var prev = document.querySelector('.prev');
-var playPause = document.querySelector('.playPause');
-var next = document.querySelector('.next');
-var audio = document.getElementById('myAudio');
+var prev = document.getElementById('P');
+var playPause = document.getElementById('PP');
+var next = document.getElementById('N');
+var audio = document.getElementById('audio');
 
 var current = 0;
+var playing = false;
 
 var songList = [
     "/music/Soul.mp3",
@@ -12,7 +13,7 @@ var songList = [
 ];
 
 function playPause() {
-    if (audio.pause) {
+    if (playing = true) {
         audio.play();
     } else {
         audio.pause();
@@ -37,7 +38,3 @@ function prevSong() {
     audio.src = songList[current];
     audio.play();
 }
-
-audio.addEventListener('ended', function() {
-    nextSong();
-});

@@ -16,7 +16,7 @@
     <!-- This is where all the code is gonna go-->
     <body>
         <!-- This class is for the button toggle-->
-        <div class="toggle_button">
+        <div class="toggle_button" style="float:right">
             <input type="checkbox" onclick="changeBackground()"/>
         </div>
 
@@ -24,24 +24,24 @@
         <div class="music">
             <div class="player">
                 <!-- Music class -->
-                <audio id="myAudio">
-                    <source src="/music/Soul.mp3" type="audio/mpeg">
+                <audio>
+                    <source src="" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
 
                 <!-- Buttons class -->
                 <div class="buttons">
-                    <span class="prev" onclick="prevSong()">
+                    <span class="prev" id="P" onclick="prevSong()">
                         <!-- <img src="/images/media-skip-backward-xxl.png"> -->
                         <ion-icon name="play-back-outline"></ion-icon>
                     </span>
 
-                    <span class="playPause" onclick="playPause()">
+                    <span class="playPause" id="PP" onclick="playPause()">
                         <!-- <img src="/images/play-xxl.png"> -->
                         <ion-icon name="play-outline"></ion-icon>
                     </span>
 
-                    <span class="next" onclick="nextSong()">
+                    <span class="next" id="N" onclick="nextSong()">
                         <!-- <img src="/images/media-skip-forward-xxl.png"> -->
                         <ion-icon name="play-forward-outline"></ion-icon>
                     </span>
