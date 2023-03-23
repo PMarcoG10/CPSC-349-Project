@@ -7,10 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LOFI MUSIC PLAYER</title>
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
         <script src="code.js"></script>
         <script src="music.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </head>
 
     <!-- This is where all the code is gonna go-->
@@ -24,29 +23,18 @@
         <div class="music">
             <div class="player">
                 <!-- Music class -->
-                <audio>
-                    <source src="" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-
+                <audio src=""></audio>
                 <!-- Buttons class -->
                 <div class="buttons">
-                    <span class="prev" id="P" onclick="prevSong()">
-                        <!-- <img src="/images/media-skip-backward-xxl.png"> -->
-                        <ion-icon name="play-back-outline"></ion-icon>
-                    </span>
-
-                    <span class="playPause" id="PP" onclick="playPause()">
-                        <!-- <img src="/images/play-xxl.png"> -->
-                        <ion-icon name="play-outline"></ion-icon>
-                    </span>
-
-                    <span class="next" id="N" onclick="nextSong()">
-                        <!-- <img src="/images/media-skip-forward-xxl.png"> -->
-                        <ion-icon name="play-forward-outline"></ion-icon>
-                    </span>
-                    
+                    <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+                    <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+                    <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
                 </div>
+                <div class="slider_container">
+                    <i class="fa fa-volume-down"></i>
+                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
+                    <i class="fa fa-volume-up"></i>
+                  </div>
             </div>
         </div>
 

@@ -66,41 +66,75 @@ img {
     transition: all .9s;
     background-color: #ECF0F3;
 }
-/* ============================================================= */
-
 /*music stuff ===================================================*/
 .buttons {
-    position: relative;
+    /* position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 10%;
+    width: 10%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.buttons span {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.playpause-track, .prev-track, .next-track {
+    padding: 25px;
+    opacity: 0.8;
+  
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+  }
+  
+  .playpause-track:hover, .prev-track:hover, .next-track:hover {
+    opacity: 1.0;
+  }
+
+  .slider_container {
+    width: 75%;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  
+  /* Modify the appearance of the slider */
+  .seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: black;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  /* Modify the appearance of the slider thumb */
+  .seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: white;
     cursor: pointer;
-}
-
-.buttons span:active,
-.buttons span.active {
-    color: pink;
-    box-shadow: inset 0 -7px 5px black,
-    inset 0 5px 10px black;
-}
-
-.buttons span.playPause {
-    width: 100px;
-    height: 100px;
-}
-
-.buttons span ion-icon {
-    font-size: 3em;
-}
+    border-radius: 50%;
+  }
+  
+  .seek_slider:hover, .volume_slider:hover {
+    opacity: 1.0;
+  }
+  
+  .volume_slider {
+    width: 30%;
+  }
+  
+  i.fa-volume-down, i.fa-volume-up {
+    padding: 10px;
+  }
+  
+  i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
+    cursor: pointer;
+  }
 /*==============================================================*/

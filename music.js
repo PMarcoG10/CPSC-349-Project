@@ -1,40 +1,65 @@
 /* This will be for the music*/
-var prev = document.getElementById('P');
-var playPause = document.getElementById('PP');
-var next = document.getElementById('N');
-var audio = document.getElementById('audio');
+let prev_btn = document.querySelector(".prev-track");
+let playpause_btn = document.querySelector(".playpause-track");
+let next_btn = document.querySelector(".next-track");
+let volume_slider = document.querySelector(".volume_slider");
 
-var current = 0;
-var playing = false;
+let current = 0;
+let isPlaying = false;
 
-var songList = [
-    "/music/Soul.mp3",
-    "/music/Whistle.mp3"
+// Create new audio element
+let curr_track = document.createElement('audio');
+
+let songList = [
+    {
+     path:   "/music/Soul.mp3"
+    },
+    {
+      path:  "/music/Whistle.mp3"
+    },
 ];
 
-function playPause() {
-    if (playing = true) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
+function loadTrack(current) {
+    curr_track.src = songList[current].path;
+    curr_track.load();
 }
 
-function nextSong() {
-    current++;
-    if (current >= songList.length) {
-        current = 0;
-    }
-    audio.src = songList[current];
-    audio.play();
+// Load the first track in the tracklist
+loadTrack(current);
+
+function playpauseTrack() {
+  if (!isPlaying) playTrack();
+  else pauseTrack();
 }
 
-function prevSong() {
-    current--;
-    if (current < 0) {
-        current = songList.length - 1;
-    }
+function playTrack() {
+    curr_track.play();
+    isPlaying = true;
+    playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+}
+  
+function pauseTrack() {
+    curr_track.pause();
+    isPlaying = false;
+    playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';;
+}
 
-    audio.src = songList[current];
-    audio.play();
+function nextTrack() {
+    if (current < songList.length - 1)
+    current += 1;
+    else current = 0;
+    loadTrack(current);
+    playTrack();
+}
+  
+function prevTrack() {
+    if (current > 0)
+    current -= 1;
+    else current = songList.length;
+    loadTrack(current);
+    playTrack();
+}
+
+function setVolume() {
+    curr_track.volume = volume_slider.value / 100;
 }
