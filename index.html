@@ -1,42 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- This defines the website url & handles the extra files-->
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LOFI MUSIC PLAYER</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
-        <script src="code.js"></script>
-        <script src="music.js"></script>
-    </head>
+  <!-- This defines the website url & handles the extra files-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOFI MUSIC PLAYER</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/7086533bcd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="code.js"></script>
+    <script src="music.js"></script>
+  </head>
 
-    <!-- This is where all the code is gonna go-->
-    <body>
-        <!-- This class is for the button toggle-->
-        <div class="toggle_button" style="float:right">
-            <input type="checkbox" onclick="changeBackground()"/>
+  <!-- This is where all the code is gonna go-->
+  <body>
+    <!-- This class is for the button toggle-->
+    <div class="toggle_button" style="float: right">
+      <input type="checkbox" onclick="changeBackground()" />
+    </div>
+
+    <!-- This will format the buttons to be columns-->
+    <div class="music">
+      <div class="player" style="float: left">
+        <!-- Buttons class -->
+        <div class="buttons">
+          <div class="prev-track" onclick="prevTrack()">
+            <i class="fa fa-step-backward fa-2x"></i>
+          </div>
+          <div class="playpause-track" onclick="playpauseTrack()">
+            <i class="fa fa-play-circle fa-5x"></i>
+          </div>
+          <div class="next-track" onclick="nextTrack()">
+            <i class="fa fa-step-forward fa-2x"></i>
+          </div>
         </div>
-
-        <!-- This will format the buttons to be columns-->
-        <div class="music">
-            <div class="player">
-                <!-- Music class -->
-                <audio src=""></audio>
-                <!-- Buttons class -->
-                <div class="buttons">
-                    <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
-                    <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
-                    <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
-                </div>
-                <div class="slider_container">
-                    <i class="fa fa-volume-down"></i>
-                    <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                    <i class="fa fa-volume-up"></i>
-                  </div>
-            </div>
+        <div class="slider_container">
+          <i class="fa fa-volume-down"></i>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="99"
+            class="volume_slider"
+            onchange="setVolume()"
+          />
+          <i class="fa fa-volume-up"></i>
         </div>
-
-    </body>
+      </div>
+    </div>
+  </body>
 </html>
