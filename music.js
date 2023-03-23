@@ -36,13 +36,13 @@ function playpauseTrack() {
 function playTrack() {
   curr_track.play();
   isPlaying = true;
-  playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-pause fa-5x"></i>';
 }
 
 function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
-  playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-play fa-5x"></i>';
 }
 
 function nextTrack() {

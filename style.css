@@ -144,8 +144,8 @@ i.fa-volume-up {
   padding: 10px;
 }
 
-i.fa-play-circle,
-i.fa-pause-circle,
+i.fa-circle-play,
+i.fa-circle-pause,
 i.fa-step-forward,
 i.fa-step-backward {
   cursor: pointer;
