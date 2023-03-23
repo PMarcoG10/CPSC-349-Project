@@ -1,6 +1,6 @@
 /* This will be the background image */
 body {
-  background-image: url("./assets/images/daytime_lofi.jpg");
+  background-image:url(/assets/images/daytime_lofi.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -22,7 +22,7 @@ img {
   position: relative;
   width: 200px;
   height: 100px;
-  background-image: url(./assets/images/sun_button.jpeg);
+  background-image: url(/assets/images/sun_button.jpeg);
   background-position: center;
   background-size: cover;
   border-radius: 50px;
@@ -58,7 +58,7 @@ img {
 }
 
 .toggle_button input:checked {
-  background-image: url(./assets/images/moon_button.jpeg);
+  background-image: url(/assets/images/moon_button.jpeg);
   background-position: center;
   transition: background-image 0.9s;
 }

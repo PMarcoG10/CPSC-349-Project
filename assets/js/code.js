@@ -4,10 +4,10 @@ var isBackground = true;
 function changeBackground() {
   var images = document.querySelector("body");
   if (isBackground) {
-    images.style.backgroundImage = "url(./assets/images/nightsky_lofi.jpg)";
+    images.style.backgroundImage = "url(/assets/images/nightsky_lofi.jpg)";
     isBackground = false;
   } else {
-    images.style.backgroundImage = "url(./assets/images/daytime_lofi.jpg)";
+    images.style.backgroundImage = "url(/assets/images/daytime_lofi.jpg)";
     isBackground = true;
   }
 }
