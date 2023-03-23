@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOFI MUSIC PLAYER</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- css files -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/musicStyle.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/clockStyle.css" />
     <!-- Load FontAwesome icons -->
     <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
-    <script src="code.js"></script>
-    <script src="music.js"></script>
+    <!-- java script -->
+    <script src="./assets/js/code.js"></script>
+    <script src="./assets/js/music.js"></script>
+    <script src="./assets/js/clock.js"></script>
   </head>
 
   <!-- This is where all the code is gonna go-->
@@ -21,33 +26,37 @@
     </div>
 
     <!-- This will format the buttons to be columns-->
-    <div class="music">
-      <div class="player" style="float: left">
+    <div class="player" style="float: left">
         <!-- Buttons class -->
         <div class="buttons">
-          <div class="prev-track" onclick="prevTrack()">
+            <div class="prev-track" onclick="prevTrack()">
             <i class="fa fa-step-backward fa-2x"></i>
-          </div>
-          <div class="playpause-track" onclick="playpauseTrack()">
-            <i class="fa-solid fa-circle-play fa-5x"></i>
-          </div>
-          <div class="next-track" onclick="nextTrack()">
+            </div>
+            <div class="playpause-track" onclick="playpauseTrack()">
+            <i class="fa-solid fa-circle-play fa-3x"></i>
+            </div>
+            <div class="next-track" onclick="nextTrack()">
             <i class="fa fa-step-forward fa-2x"></i>
-          </div>
+            </div>
         </div>
         <div class="slider_container">
-          <i class="fa fa-volume-down"></i>
-          <input
+            <i class="fa fa-volume-down"></i>
+            <input
             type="range"
             min="1"
             max="100"
             value="99"
             class="volume_slider"
             onchange="setVolume()"
-          />
-          <i class="fa fa-volume-up"></i>
+            />
+            <i class="fa fa-volume-up"></i>
+            <i class="fa-solid fa-volume-xmark" onclick="toggleMute()"></i>
         </div>
-      </div>
+    </div>
+
+    <!-- This will disaply a tiny digital clock-->
+    <div class="timer_clock">
+        <div class="digital"></div>
     </div>
   </body>
 </html>

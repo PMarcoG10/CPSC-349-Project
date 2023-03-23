@@ -11,10 +11,10 @@ let curr_track = document.createElement("audio");
 
 let songList = [
   {
-    path: "/music/Soul.mp3",
+    path: "assets/music/Soul.mp3",
   },
   {
-    path: "/music/Whistle.mp3",
+    path: "assets/music/Whistle.mp3",
   },
 ];
 
@@ -60,4 +60,8 @@ function prevTrack() {
 
 function setVolume() {
   curr_track.volume = document.querySelector(".volume_slider").value / 100;
+}
+
+function toggleMute() {
+    curr_track.muted = !curr_track.muted;
 }

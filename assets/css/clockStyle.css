@@ -1,0 +1,18 @@
+/* Digital clock==========================================================*/
+.timer_clock {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .digital {
+    font-size: 2em;
+  }
+  
+  .digital span {
+    border-radius: 10px;
+    color: black;
+    display: inline-block;
+    margin: 0.2em 0;
+    padding: 0.5em;
+  }
+  
