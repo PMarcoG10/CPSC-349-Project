@@ -1,31 +1,22 @@
-// const clock = document.querySelector('.digital');
-
-//assigning time values to constants 
-const tick = () => {
-  const now = new Date();
-  let h = now.getHours();
-  const m = now.getMinutes();
-  const s = now.getSeconds();
-  let am_pm = 'AM';
-
-  var today = new Date();
-  var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
-
-//defining html for digital clock
-  const html = `
-  <center><span>${date}</span></center>
-  <span>${h}</span> : 
-  <span>${m}</span> : 
-  <span>${s}</span>
-  <span class="ampm">${am_pm}</span>
-  `; 
-
-// If you didn't wanted to display the seconds then you can remove <span>${s}</span>
-
-
-//printing html code inside div.clock
-document.querySelector('.digital').innerHTML = html;
-};
-
-//refreshing clock every 1 second
-setInterval(tick, 1000);
+setInterval(()=>{
+  const time = document.querySelector(".display #time");
+  let date = new Date();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let day_night = "AM";
+  if(hours > 12){
+    day_night = "PM";
+    hours = hours - 12;
+  }
+  if(seconds < 10){
+    seconds = "0" + seconds;
+  }
+  if(minutes < 10){
+    minutes = "0" + minutes;
+  }
+  if(hours < 10){
+    hours = "0" + hours;
+  }
+  time.textContent = hours + ":" + minutes + ":" + seconds + " "+ day_night;
+});
