@@ -1,11 +1,29 @@
 /* This will be the background image */
 body {
-  background-image: url("/images/daytime_lofi.jpg");
+  margin: 0;
+  padding: 0;
+  background-image: url("/images/day.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
 }
 
+/*Rain Method =========================================== */
+#rain {
+  height: 100vh;
+  background-image: url("images/rain.png");
+  animation: rain.3s linear infinite;
+}
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 20% 100%;
+  }
+}
+/*===================================================================*/
 img {
   width: 30px;
   height: 30px;
@@ -20,6 +38,7 @@ img {
 .toggle_button input {
   -webkit-appearance: none;
   position: relative;
+  padding: 100px;
   width: 200px;
   height: 100px;
   background-image: url(images/sun_button.jpeg);
@@ -29,19 +48,6 @@ img {
   outline: none;
   transition: background-image 0.9s;
   box-shadow: 0px 2px 5px 1px gray;
-}
-
-.toggle_button input:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100px;
-  width: 100px;
-  background-color: navy;
-  border-radius: 50px;
-  transition: all 0.9s;
-  background-color: #f7ca33;
 }
 
 .toggle_button input:before {
@@ -86,7 +92,7 @@ img {
 .playpause-track,
 .prev-track,
 .next-track {
-  padding: 25px;
+  padding: 7px;
   opacity: 0.8;
 
   /* Smoothly transition the opacity */
@@ -113,7 +119,7 @@ img {
   -moz-appearance: none;
   appearance: none;
   height: 5px;
-  background: black;
+  background: rgb(244, 241, 241);
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
@@ -150,4 +156,5 @@ i.fa-step-forward,
 i.fa-step-backward {
   cursor: pointer;
 }
+
 /*==============================================================*/

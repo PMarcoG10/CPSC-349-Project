@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- This defines the website url & handles the extra files-->
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LOFI MUSIC PLAYER</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- Load FontAwesome icons -->
-    <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
-    <script src="code.js"></script>
-    <script src="music.js"></script>
-  </head>
+<!-- This defines the website url & handles the extra files-->
 
-  <!-- This is where all the code is gonna go-->
-  <body>
-    <!-- This class is for the button toggle-->
-    <div class="toggle_button" style="float: right">
-      <input type="checkbox" onclick="changeBackground()" />
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lofi</title>
 
-    <!-- This will format the buttons to be columns-->
-    <div class="music">
-      <div class="player" style="float: left">
-        <!-- Buttons class -->
-        <div class="buttons">
-          <div class="prev-track" onclick="prevTrack()">
-            <i class="fa fa-step-backward fa-2x"></i>
-          </div>
-          <div class="playpause-track" onclick="playpauseTrack()">
-            <i class="fa-solid fa-circle-play fa-5x"></i>
-          </div>
-          <div class="next-track" onclick="nextTrack()">
-            <i class="fa fa-step-forward fa-2x"></i>
-          </div>
+  <!--Loads My CSS File-->
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
+  <!-- Load FontAwesome icons -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+
+  <!--Music Scrips JS-->
+  <script src="code.js"></script>
+  <script src="music.js"></script>
+
+  <!-- Timer JS -->
+  <script src="/PromodoroTimer/timer.js"></script>
+  <!-- Timer CSS -->
+  <link rel="stylesheet" href="/PromodoroTimer/timer.css"/>
+</head>
+
+<!-- This is where all the code is gonna go-->
+
+<body>
+  <!-- This class is for the button toggle-->
+  <div class="toggle_button" style="float: right">
+    <input type="checkbox" onclick="changeBackground()" />
+  </div>
+
+  <!-- This will format the buttons to be columns-->
+  <div class="music">
+    <div class="player" style="float: left">
+      <!-- Buttons class -->
+      <div class="buttons">
+        <div class="prev-track" onclick="prevTrack()">
+          <i class="fa fa-step-backward fa-2x"></i>
         </div>
-        <div class="slider_container">
-          <i class="fa fa-volume-down"></i>
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="99"
-            class="volume_slider"
-            onchange="setVolume()"
-          />
-          <i class="fa fa-volume-up"></i>
+        <div class="playpause-track" onclick="playpauseTrack()">
+          <i class="fa-solid fa-circle-play fa-5x"></i>
+        </div>
+        <div class="next-track" onclick="nextTrack()">
+          <i class="fa fa-step-forward fa-2x"></i>
         </div>
       </div>
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
+        <i class="fa fa-volume-up"></i>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <!-- This is where the Promodoro Timer will Appear -->
+  <div id="pomodoro">
+    <div id="container">
+      <div id="timer">
+        <div id="time">
+          <span id="minutes">25</span>
+          <span id="colon">:</span>
+          <span id="seconds">00</span>
+        </div>
+        <div id="filler"></div>
+      </div>
+
+      <div id="buttons">
+        <button id="work">Start</button>
+        <button id="shortBreak">Short Break</button>
+        <button id="longBreak">Long Break</button>
+        <button id="stop">Stop</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
