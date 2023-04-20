@@ -35,13 +35,13 @@ function playpauseTrack() {
 function playTrack() {
   curr_track.play();
   isPlaying = true;
-  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-pause fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-pause fa-3x"></i>';
 }
 
 function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
-  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-play fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-play fa-3x"></i>';
 }
 
 function nextTrack() {
