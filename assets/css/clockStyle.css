@@ -1,10 +1,11 @@
 /* Digital clock==========================================================*/
 /* formats the background */
 .digital_clock{
-  height: 80px;
-  width: 190px;
-  display: flex;
-  justify-content: center;
+  height: 85px;
+  width: 185px;
+  position: absolute;
+  bottom: 10px;
+  left: auto;
   background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
   border-radius: 10px;
   animation: animate 1.5s linear infinite;
@@ -29,10 +30,10 @@
 }
 
 /* displays the contents of the clock*/
-.display #time{
+.display #time_clock{
   line-height: 85px;
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 1px;
   background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);

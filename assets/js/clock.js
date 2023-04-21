@@ -1,5 +1,5 @@
 setInterval(()=>{
-  const time = document.querySelector(".display #time");
+  const time = document.querySelector(".display #time_clock");
   let date = new Date();
   let hours = date.getHours();
   let minutes = date.getMinutes();

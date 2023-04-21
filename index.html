@@ -22,7 +22,6 @@
   </head>
 
 <!-- This is where all the code is gonna go-->
-
 <body>
   <!-- This class is for the button toggle-->
   <div class="toggle_button" style="float: right">
@@ -33,7 +32,7 @@
   <div class="music">
     <div class="player" style="float: left">
       <!-- Buttons class -->
-      <div class="buttons">
+      <div class="button_class">
         <div class="prev-track" onclick="prevTrack()">
           <i class="fa fa-step-backward fa-2x"></i>
         </div>
@@ -48,6 +47,7 @@
         <i class="fa fa-volume-down"></i>
         <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
         <i class="fa fa-volume-up"></i>
+        <i class="fa-solid fa-volume-xmark" onclick="toggleMute()"></i>
       </div>
     </div>
   </div>
@@ -73,6 +73,14 @@
     </div>
   </div>
 
+  <!-- This will disaply a tiny digital clock-->
+  <div class="digital_clock">
+    <div class="display" style="float: left">
+      <div id="time_clock"></div>
+    </div>
+    <span></span>
+    <span></span>
+  </div>
 </body>
 
 </html>

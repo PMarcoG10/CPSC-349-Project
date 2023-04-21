@@ -10,8 +10,8 @@ body {
 /* Countdown timer */
 #timer {
   color:rgb(249, 242, 242); 
-  font-size:30px; 
-  margin:10px auto;
+  font-size: 30px; 
+  margin: 10px auto;
   animation: blinker 2s linear infinite;
 }
 @keyframes blinker {
@@ -20,8 +20,8 @@ body {
   }
 }
 
-#time{
-  margin-top:70px;
+.time{
+  margin-top: 70px;
   z-index : 1;
   position:relative;
 }
