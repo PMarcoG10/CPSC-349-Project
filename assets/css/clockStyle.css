@@ -1,0 +1,63 @@
+/* Digital clock==========================================================*/
+/* formats the background */
+.digital_clock{
+  height: 85px;
+  width: 185px;
+  position: absolute;
+  bottom: 10px;
+  left: auto;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  border-radius: 10px;
+  animation: animate 1.5s linear infinite;
+}
+
+.digital_clock .display,
+.digital_clock span{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* formats the clock */
+.digital_clock .display{
+  z-index: 999;
+  height: 75px;
+  width: 180px;
+  background: #1b1b1b;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* displays the contents of the clock*/
+.display #time_clock{
+  line-height: 85px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+  100%{
+    filter: hue-rotate(360deg);
+  }
+}
+
+.digital_clock span{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  background: inherit;
+}
+
+.digital_clock span:first-child{
+  filter: blur(7px);
+}
+.digital_clock span:last-child{
+  filter: blur(20px);
+}

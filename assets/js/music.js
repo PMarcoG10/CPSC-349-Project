@@ -2,7 +2,6 @@
 let prev_btn = document.querySelector(".prev-track");
 let playpause_btn = document.querySelector(".playpause-track");
 let next_btn = document.querySelector(".next-track");
-let volume_slider = document.querySelector(".volume_slider");
 
 let current = 0;
 let isPlaying = false;
@@ -12,10 +11,10 @@ let curr_track = document.createElement("audio");
 
 let songList = [
   {
-    path: "/music/Soul.mp3",
+    path: "assets/music/Soul.mp3",
   },
   {
-    path: "/music/Whistle.mp3",
+    path: "assets/music/Whistle.mp3",
   },
 ];
 
@@ -36,13 +35,13 @@ function playpauseTrack() {
 function playTrack() {
   curr_track.play();
   isPlaying = true;
-  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-pause fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-pause fa-3x"></i>';
 }
 
 function pauseTrack() {
   curr_track.pause();
   isPlaying = false;
-  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-play fa-5x"></i>';
+  document.querySelector(".playpause-track").innerHTML = '<i class="fa-solid fa-circle-play fa-3x"></i>';
 }
 
 function nextTrack() {
@@ -60,5 +59,9 @@ function prevTrack() {
 }
 
 function setVolume() {
-  curr_track.volume = volume_slider.value / 100;
+  curr_track.volume = document.querySelector(".volume_slider").value / 100;
+}
+
+function toggleMute() {
+    curr_track.muted = !curr_track.muted;
 }
