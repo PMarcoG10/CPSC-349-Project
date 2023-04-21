@@ -18,49 +18,58 @@
     <script src="./assets/js/clock.js"></script>
   </head>
 
-  <!-- This is where all the code is gonna go-->
-  <body>
-    <!-- This class is for the button toggle-->
-    <div class="toggle_button" style="float: right">
-      <input type="checkbox" onclick="changeBackground()" />
-    </div>
+<!-- This is where all the code is gonna go-->
 
-    <!-- This will format the buttons to be columns-->
+<body>
+  <!-- This class is for the button toggle-->
+  <div class="toggle_button" style="float: right">
+    <input type="checkbox" onclick="changeBackground()" />
+  </div>
+
+  <!-- This will format the buttons to be columns-->
+  <div class="music">
     <div class="player" style="float: left">
-        <!-- Buttons class -->
-        <div class="buttons">
-            <div class="prev-track" onclick="prevTrack()">
-            <i class="fa fa-step-backward fa-2x"></i>
-            </div>
-            <div class="playpause-track" onclick="playpauseTrack()">
-            <i class="fa-solid fa-circle-play fa-3x"></i>
-            </div>
-            <div class="next-track" onclick="nextTrack()">
-            <i class="fa fa-step-forward fa-2x"></i>
-            </div>
+      <!-- Buttons class -->
+      <div class="buttons">
+        <div class="prev-track" onclick="prevTrack()">
+          <i class="fa fa-step-backward fa-2x"></i>
         </div>
-        <div class="slider_container">
-            <i class="fa fa-volume-down"></i>
-            <input
-            type="range"
-            min="1"
-            max="100"
-            value="99"
-            class="volume_slider"
-            onchange="setVolume()"
-            />
-            <i class="fa fa-volume-up"></i>
-            <i class="fa-solid fa-volume-xmark" onclick="toggleMute()"></i>
+        <div class="playpause-track" onclick="playpauseTrack()">
+          <i class="fa-solid fa-circle-play fa-5x"></i>
         </div>
+        <div class="next-track" onclick="nextTrack()">
+          <i class="fa fa-step-forward fa-2x"></i>
+        </div>
+      </div>
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
+        <i class="fa fa-volume-up"></i>
+      </div>
     </div>
+  </div>
 
-    <!-- This will disaply a tiny digital clock-->
-    <div class="digital_clock">
-      <div class="display">
-        <div id="time"></div>
-     </div>
-     <span></span>
-     <span></span>
+  <!-- This is where the Promodoro Timer will Appear -->
+  <div id="pomodoro">
+    <div id="container">
+      <div id="timer">
+        <div id="time">
+          <span id="minutes">25</span>
+          <span id="colon">:</span>
+          <span id="seconds">00</span>
+        </div>
+        <div id="filler"></div>
+      </div>
+
+      <div id="buttons">
+        <button id="work">Start</button>
+        <button id="shortBreak">Short Break</button>
+        <button id="longBreak">Long Break</button>
+        <button id="stop">Stop</button>
+      </div>
     </div>
-  </body>
+  </div>
+
+</body>
+
 </html>
