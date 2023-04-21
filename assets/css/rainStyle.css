@@ -1,0 +1,15 @@
+/*Rain Method =========================================== */
+#rain {
+  height: 100vh;
+  background-image: url("images/rain.png");
+  animation: rain.3s linear infinite;
+}
+@keyframes rain {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 20% 100%;
+  }
+}
