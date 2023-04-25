@@ -14,7 +14,40 @@ let songList = [
     path: "assets/music/Soul.mp3",
   },
   {
-    path: "assets/music/Whistle.mp3",
+    path: "assets/music/Late-at-Night.mp3",
+  },
+  {
+    path: "assets/music/City-Lights.mp3",
+  },
+  {
+    path: "assets/music/",
+  },
+  {
+    path: "assets/music/",
+  },
+  {
+    path: "assets/music/",
+  },
+  {
+    path: "assets/music/",
+  },
+  {
+    path: "assets/music/",
+  },
+  {
+    path: "",
+  },
+  {
+    path: "",
+  },
+  {
+    path: "",
+  },
+  {
+    path: "",
+  },
+  {
+    path: "",
   },
 ];
 
