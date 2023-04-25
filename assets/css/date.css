@@ -1,9 +1,10 @@
 /* formats the digital clock */
 .Date { 
-    font-family:'Rubik Wet Paint' ;
+    font-family:'Macondo' ;
     position: fixed;
     top: 50%;
     left: 50%;
+    font-weight: bolder;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     color: whitesmoke;
