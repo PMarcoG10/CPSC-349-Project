@@ -1,13 +1,12 @@
 /* formats the digital clock */
 .Date { 
-    font-family: monospace ;
-    font-weight: bold;
+    font-family:'Rubik Wet Paint' ;
     position: fixed;
     top: 50%;
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    color: darkturquoise;
+    color: whitesmoke;
     text-align: center;
   }
 /* formats the dates */
