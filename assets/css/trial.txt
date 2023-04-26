@@ -1,0 +1,45 @@
+            <!-- the volume buttons -->
+            <i class="fa-solid fa-volume-down" style="color: white"></i>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="99"
+              class="volume_slider"
+              onchange="setVolume()"
+            />
+            <i class="fa-solid fa-volume-up" style="color: white"></i>
+
+this is the volume code
+/* this is separte */
+/* when the mouse is hovering over the slider */
+.volume_slider:hover {
+  opacity: 1;
+}
+/* the width of the volume slider */
+.volume_slider {
+  width: 30%;
+}
+
+/* Modify the appearance of the slider */
+.volume_slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: black;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+/* Modify the appearance of the slider thumb */
+.volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: white;
+  cursor: pointer;
+  border-radius: 50%;
+}

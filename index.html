@@ -14,10 +14,19 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/rainStyle.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/date.css" />
     <!-- google fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik Wet Paint">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Macondo">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Rubik Wet Paint"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Macondo"
+    />
     <!-- Load FontAwesome icons -->
-    <script src="https://kit.fontawesome.com/7086533bcd.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/7086533bcd.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- java script -->
     <script src="./assets/js/code.js"></script>
     <script src="./assets/js/music.js"></script>
@@ -26,71 +35,95 @@
     <script src="./assets/js/date.js"></script>
   </head>
 
-<!-- This is where all the code is gonna go-->
-<body>
-  <!-- This class is for the button toggle-->
-  <div class="toggle_button" style="float: right">
-    <input type="checkbox" onclick="changeBackground()" />
-  </div>
+  <!-- This is where all the code is gonna go-->
+  <body>
+    <!-- This class is for the button toggle-->
+    <div class="toggle_button" style="float: right">
+      <input type="checkbox" onclick="changeBackground()" />
+    </div>
 
-  <!-- This will format the buttons to be columns-->
-  <div class="music">
-    <div class="player" style="float: left">
-      <!-- Buttons class -->
-      <div class="button_class">
-        <div class="prev-track" onclick="prevTrack()">
-          <i class="fa fa-step-backward fa-2x"></i>
+    <!-- This will format the buttons to be columns-->
+    <div class="music">
+      <div class="player">
+        <!-- formats the box -->
+        <div class="border">
+          <!-- Buttons class -->
+          <div class="button_class">
+            <!-- the previous button -->
+            <div class="prev-track" onclick="prevTrack()">
+              <i class="fa-solid fa-step-backward" style="color: white"></i>
+            </div>
+            <!-- this is the play button -->
+            <div class="playpause-track" onclick="playpauseTrack()">
+              <i class="fa-solid fa-play" style="color: white"></i>
+            </div>
+            <!-- the skip button -->
+            <div class="next-track" onclick="nextTrack()">
+              <i class="fa-solid fa-step-forward" style="color: white"></i>
+            </div>
+            <!-- the volume buttons -->
+            <div class="dropdown">
+              <i class="fa-solid fa-volume-down" style="color: white"></i>
+              <!-- the volume class -->
+              <div class="volume-content">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="volume_slider"
+                  onchange="setVolume()"
+                />
+              </div>
+            </div>
+            <!-- this is the mute button -->
+            <div class="mute-button">
+              <i
+                class="fa-solid fa-volume-xmark"
+                style="color: white"
+                onclick="toggleMute()"
+              ></i>
+            </div>
+          </div>
         </div>
-        <div class="playpause-track" onclick="playpauseTrack()">
-          <i class="fa-solid fa-circle-play fa-3x"></i>
-        </div>
-        <div class="next-track" onclick="nextTrack()">
-          <i class="fa fa-step-forward fa-2x"></i>
-        </div>
-      </div>
-      <div class="slider_container">
-        <i class="fa fa-volume-down"></i>
-        <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()" />
-        <i class="fa fa-volume-up"></i>
-        <i class="fa-solid fa-volume-xmark" onclick="toggleMute()"></i>
       </div>
     </div>
-  </div>
 
-  <!-- This is where the Promodoro Timer will Appear -->
-  <div id="pomodoro">
-    <div id="container">
-      <div id="timer">
-        <div id="time">
-          <span id="minutes">25</span>
-          <span id="colon">:</span>
-          <span id="seconds">00</span>
+    <!-- This is where the Promodoro Timer will Appear -->
+    <div id="pomodoro">
+      <div id="container">
+        <div id="timer">
+          <div id="time">
+            <span id="minutes">25</span>
+            <span id="colon">:</span>
+            <span id="seconds">00</span>
+          </div>
+          <div id="filler"></div>
         </div>
-        <div id="filler"></div>
-      </div>
 
-      <div id="buttons">
-        <button id="work">Start</button>
-        <button id="shortBreak">Short Break</button>
-        <button id="longBreak">Long Break</button>
-        <button id="stop">Stop</button>
+        <div id="buttons">
+          <button id="work">Start</button>
+          <button id="shortBreak">Short Break</button>
+          <button id="longBreak">Long Break</button>
+          <button id="stop">Stop</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- This will disaply a tiny digital clock-->
-  <div class="digital_clock">
-    <div class="display" style="float: left">
-      <div id="time_clock"></div>
+    <!-- This will disaply a tiny digital clock-->
+    <div class="digital_clock">
+      <div class="display" style="float: left">
+        <div id="time_clock"></div>
+      </div>
+      <span></span>
+      <span></span>
     </div>
-    <span></span>
-    <span></span>
-  </div>
 
-  <!-- This will display the date -->
-  <div class="Date">
-    <span class="date"></span>
-  </div>
-</body>
-
+    <!-- This will display the date -->
+    <div class="date-border">
+      <div class="Date">
+        <span class="date"></span>
+      </div>
+    </div>
+  </body>
 </html>

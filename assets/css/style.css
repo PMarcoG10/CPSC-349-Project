@@ -6,63 +6,47 @@ body {
   background-size: 100% 100%;
 }
 
-img {
-  width: 30px;
-  height: 30px;
-}
-
-/* Toggle button =============================================== */
+/* Toggle button class to format*/
 .toggle_button {
   position: relative;
   display: flex;
 }
-
+/* handles the day background */
 .toggle_button input {
   -webkit-appearance: none;
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 100px;
+  height: 50px;
   background-image: url(/assets/images/sun_button.jpeg);
   background-position: center;
   background-size: cover;
-  border-radius: 50px;
+  border-radius: 100px;
   outline: none;
   transition: background-image 0.9s;
   box-shadow: 0px 2px 5px 1px gray;
+  z-index: 999999999;
 }
-
+/* hadnles the night background */
 .toggle_button input:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   background-color: navy;
-  border-radius: 50px;
+  border-radius: 100px;
   transition: all 0.9s;
   background-color: #f7ca33;
+  z-index: 999999999;
 }
-
-.toggle_button input:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100px;
-  width: 100px;
-  background-color: navy;
-  border-radius: 50px;
-  transition: all 0.9s;
-  background-color: #f7ca33;
-}
-
+/* when the button is pressed it changes to the moon */
 .toggle_button input:checked {
   background-image: url(/assets/images/moon_button.jpeg);
   background-position: center;
   transition: background-image 0.9s;
 }
-
+/* handles the animation when it is pressed */
 .toggle_button input:checked:before {
   transform: translate(100%);
   transition: all 0.9s;
