@@ -1,98 +1,91 @@
 /* Music==========================================================*/
 .player {
-    height: 95vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  .button_class {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .slider_container {
-      display: flex;
-  }
-  
-  .playpause-track,
-  .prev-track,
-  .next-track {
-    padding: 15px;
-    opacity: 0.8;
-  
-    /* Smoothly transition the opacity */
-    transition: opacity 0.2s;
-  }
-  
-  .playpause-track:hover,
-  .prev-track:hover,
-  .next-track:hover {
-    opacity: 1;
-  }
-  
-  .slider_container {
-    width: 75%;
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Modify the appearance of the slider */
-  .volume_slider {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    height: 5px;
-    background: black;
-    opacity: 0.7;
-    -webkit-transition: 0.2s;
-    transition: opacity 0.2s;
-  }
-  
-  /* Modify the appearance of the slider thumb */
-  .volume_slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: white;
-    cursor: pointer;
-    border-radius: 50%;
-  }
-  
-  .volume_slider:hover {
-    opacity: 1;
-  }
-  
-  .volume_slider {
-    width: 30%;
-  }
-  
-  i.fa-volume-down,
-  i.fa-volume-up {
-    padding: 10px;
-  }
-  
-  i.fa-volume-xmark:hover,
-  i.fa-volume-xmark:target{
-    background-color: #ff9800;
-    color: white;
-  }
-  
-  i.fa-volume-xmark {
-    padding: 10px;
-    /* border: 2px solid yellow;
-    border-radius: 5px; */
-  }
-  
-  i.fa-circle-play,
-  i.fa-circle-pause,
-  i.fa-step-forward,
-  i.fa-step-backward,
-  i.fa-volume-xmark {
-    cursor: pointer;
-  }
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  float: left;
+}
+/* border that contains all the controls */
+.border {
+  backdrop-filter: blur(30px);
+  background: hsla(0, 0%, 7%, 0.75);
+  border-radius: 50px;
+  z-index: 999999999;
+}
+/* in charge of the buttons */
+.button_class {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+/* handles the play, prev, and next button */
+.playpause-track,
+.prev-track,
+.next-track {
+  padding: 10px;
+  opacity: 1;
+  /* Smoothly transition the opacity */
+  transition: opacity 0.2s;
+}
+/* when the mouse is hovering over the icons */
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+  opacity: 1;
+}
+
+/* this the volume slider============================================================== */
+i.fa-volume-down {
+  cursor: pointer;
+  padding: 5px;
+}
+.volume-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  min-width: 140px;
+  backdrop-filter: blur(30px);
+  background: hsla(0, 0%, 7%, 0.75);
+  padding: 5px;
+  border-radius: 50px;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .volume-content {
+  display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover i.fa-volume-down {
+  background-color: #3e8e41;
+}
+.volume-slider:hover {
+  opacity: 1;
+}
+/* ==================================================================================== */
+
+/* the mute button===================================================================== */
+/* when the mute button is being hovered */
+.mute-button {
+  /* */
+}
+i.fa-volume-xmark {
+  padding: 10px;
+}
+.mute-button:hover,
+.i.fa-volume-xmark {
+  background-color: yellow;
+}
+/* i.fa-volume-xmark:hover,
+i.fa-volume-xmark:target{
+  background-color: #ff9800;
+  color: white;
+} */
+
+/* so the buttons can be pressed */
+i.fa-play,
+i.fa-pause,
+i.fa-step-forward,
+i.fa-step-backward,
+i.fa-volume-xmark {
+  cursor: pointer;
+}
