@@ -7,8 +7,22 @@ The purpose of our website is to provide our users with a study space where they
 ![home_page](doc_images/home_page.png)
 
 ## Features
-1. Added a Moon toggle button that changes the background to something dark
+1. A toggle button that changes the background to something dark
 ![dark_mode](doc_images/dark_mode.png)
+
+2. A pomodor timer of 25 minutes to study
+![home_page](doc_images/home_page.png)
+
+4. Short break timer of 5 minutes
+![short](doc_images/short.png)
+
+6. Long break timer of 15 minutes
+![long](doc_images/long.png)
+
+8. A clock and the Date  
+![timer](doc_images/timer.png)
+
+![Date](doc_images/date.png)
 
 ## Future
 1. Try to add a datebase to get up to date music
