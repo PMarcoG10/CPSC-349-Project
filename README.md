@@ -28,4 +28,3 @@ The purpose of our website is to provide our users with a study space where they
 1. Try to add a datebase to get up to date music
 2. Change the background that correlates with the time
 3. Add special effects such as rain or wind
-4. Etc!
