@@ -11,43 +11,28 @@ let curr_track = document.createElement("audio");
 
 let songList = [
   {
-    path: "assets/music/Soul.mp3",
+    path: "assets/music/City-Lights.mp3",
   },
   {
     path: "assets/music/Late-at-Night.mp3",
   },
   {
-    path: "assets/music/City-Lights.mp3",
+    path: "assets/music/Lost-and-Found.mp3",
   },
   {
-    path: "assets/music/",
+    path: "assets/music/Lost-In-Thought.mp3",
   },
   {
-    path: "assets/music/",
+    path: "assets/music/Morning-Routine.mp3",
   },
   {
-    path: "assets/music/",
+    path: "assets/music/Purple-Dream.mp3",
   },
   {
-    path: "assets/music/",
+    path: "assets/music/Way-Home.mp3",
   },
   {
-    path: "assets/music/",
-  },
-  {
-    path: "",
-  },
-  {
-    path: "",
-  },
-  {
-    path: "",
-  },
-  {
-    path: "",
-  },
-  {
-    path: "",
+    path: "assets/music/When-I-Was-A-Boy.mp3",
   },
 ];
 
