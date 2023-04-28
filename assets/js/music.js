@@ -4,6 +4,8 @@ let playpause_btn = document.querySelector(".playpause-track");
 let next_btn = document.querySelector(".next-track");
 
 let current = 0;
+let previous = -1;
+let randomMusic;
 let isPlaying = false;
 
 // Create new audio element
@@ -36,19 +38,31 @@ let songList = [
   },
 ];
 
-function loadTrack(current) {
+function loadTrack() {
+  randomMusic = current;
+  while (randomMusic === current) {
+    randomMusic = Math.floor(Math.random() * songList.length);
+  }
+  current = randomMusic;
+
   curr_track.src = songList[current].path;
+  curr_track.autoplay = true;
   curr_track.load();
+  curr_track.play();
+
   curr_track.addEventListener("ended", nextTrack);
+  previous = current;
 }
 
-// Load the first track in the tracklist
-loadTrack(current);
+curr_track.addEventListener("play", function () {
+  document.querySelector(".playpause-track").innerHTML =
+    '<i class="fa-solid fa-pause" style="color: white;"></i>';
+});
 
-function playpauseTrack() {
-  if (!isPlaying) playTrack();
-  else pauseTrack();
-}
+curr_track.addEventListener("pause", function () {
+  document.querySelector(".playpause-track").innerHTML =
+    '<i class="fa-solid fa-play" style="color: white;"></i>';
+});
 
 function playTrack() {
   curr_track.play();
@@ -64,17 +78,27 @@ function pauseTrack() {
     '<i class="fa-solid fa-play" style="color: white;"></i>';
 }
 
+function playpauseTrack() {
+  if (!isPlaying) playTrack();
+  else pauseTrack();
+}
+
 function nextTrack() {
-  if (current < songList.length - 1) current += 1;
-  else current = 0;
-  loadTrack(current);
+  previous = current;
+  randomMusic = current;
+  while (randomMusic === current) {
+    randomMusic = Math.floor(Math.random() * songList.length);
+  }
+  current = randomMusic;
+  curr_track.src = songList[current];
+  loadTrack();
   playTrack();
 }
 
 function prevTrack() {
-  if (current > 0) current -= 1;
-  else current = songList.length;
-  loadTrack(current);
+  current = previous;
+  curr_track.src = songList[current];
+  loadTrack();
   playTrack();
 }
 
@@ -85,3 +109,6 @@ function setVolume() {
 function toggleMute() {
   curr_track.muted = !curr_track.muted;
 }
+
+// Load the first track in the tracklist
+loadTrack();
