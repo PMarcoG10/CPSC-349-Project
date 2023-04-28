@@ -6,11 +6,11 @@ let next_btn = document.querySelector(".next-track");
 let current = 0;
 let previous = -1;
 let randomMusic;
-let isPlaying = false;
 
 // Create new audio element
 let curr_track = document.createElement("audio");
 
+// an array of music that is stored locally
 let songList = [
   {
     path: "assets/music/City-Lights.mp3",
@@ -38,6 +38,7 @@ let songList = [
   },
 ];
 
+// loads the music and plays in a random order
 function loadTrack() {
   randomMusic = current;
   while (randomMusic === current) {
@@ -50,39 +51,36 @@ function loadTrack() {
   curr_track.load();
   curr_track.play();
 
-  curr_track.addEventListener("ended", nextTrack);
   previous = current;
+  curr_track.addEventListener("ended", nextTrack);
 }
 
+// when a current track is playing change it to pause symbol
 curr_track.addEventListener("play", function () {
   document.querySelector(".playpause-track").innerHTML =
     '<i class="fa-solid fa-pause" style="color: white;"></i>';
 });
 
+// when a current track is paused change it to a play symbol
 curr_track.addEventListener("pause", function () {
   document.querySelector(".playpause-track").innerHTML =
     '<i class="fa-solid fa-play" style="color: white;"></i>';
 });
 
-function playTrack() {
-  curr_track.play();
-  isPlaying = true;
-  document.querySelector(".playpause-track").innerHTML =
-    '<i class="fa-solid fa-pause" style="color: white;"></i>';
-}
-
-function pauseTrack() {
-  curr_track.pause();
-  isPlaying = false;
-  document.querySelector(".playpause-track").innerHTML =
-    '<i class="fa-solid fa-play" style="color: white;"></i>';
-}
-
+// when the play or pause button is pressed
 function playpauseTrack() {
-  if (!isPlaying) playTrack();
-  else pauseTrack();
+  if (curr_track.paused) {
+    curr_track.play();
+    document.querySelector(".playpause-track").innerHTML =
+      '<i class="fa-solid fa-pause" style="color: white;"></i>';
+  } else {
+    curr_track.pause();
+    document.querySelector(".playpause-track").innerHTML =
+      '<i class="fa-solid fa-play" style="color: white;"></i>';
+  }
 }
 
+// goes to the next song
 function nextTrack() {
   previous = current;
   randomMusic = current;
@@ -95,6 +93,7 @@ function nextTrack() {
   playTrack();
 }
 
+// goes back to the previous song
 function prevTrack() {
   current = previous;
   curr_track.src = songList[current];
@@ -102,10 +101,12 @@ function prevTrack() {
   playTrack();
 }
 
+// controls the volume
 function setVolume() {
   curr_track.volume = document.querySelector(".volume_slider").value / 100;
 }
 
+// mutes the music when button is pressed
 function toggleMute() {
   curr_track.muted = !curr_track.muted;
 }
