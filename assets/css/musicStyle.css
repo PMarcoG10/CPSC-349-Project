@@ -65,9 +65,6 @@ i.fa-volume-down {
 
 /* the mute button===================================================================== */
 /* when the mute button is being hovered */
-.mute-button {
-  /* */
-}
 i.fa-volume-xmark {
   padding: 10px;
 }
@@ -75,11 +72,6 @@ i.fa-volume-xmark {
 .i.fa-volume-xmark {
   background-color: yellow;
 }
-/* i.fa-volume-xmark:hover,
-i.fa-volume-xmark:target{
-  background-color: #ff9800;
-  color: white;
-} */
 
 /* so the buttons can be pressed */
 i.fa-play,
