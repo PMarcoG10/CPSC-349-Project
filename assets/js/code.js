@@ -1,6 +1,7 @@
 /*This functions changes the background image when the button is pressed*/
 var isBackground = true;
 
+// when the toggle button is pressed change the background
 function changeBackground() {
   var images = document.querySelector("body");
   if (isBackground) {

@@ -46,6 +46,7 @@ setInterval(function () {
       day_of_week[dateInfo.getDay()] +
       " " +
       day;
+      
     // gets the date element from html
     document.getElementsByClassName("date")[0].innerHTML = currentDate;
   }
