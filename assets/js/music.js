@@ -4,7 +4,7 @@ let playpause_btn = document.querySelector(".playpause-track");
 let next_btn = document.querySelector(".next-track");
 
 let current = 0;
-let previous = -1;
+let previous = 0;
 let randomMusic;
 
 // Create new audio element
@@ -41,7 +41,7 @@ let songList = [
 // loads the music and plays in a random order
 function loadTrack() {
   randomMusic = current;
-  while (randomMusic === current) {
+  while (randomMusic == current) {
     randomMusic = Math.floor(Math.random() * songList.length);
   }
   current = randomMusic;
@@ -51,8 +51,8 @@ function loadTrack() {
   curr_track.load();
   curr_track.play();
 
-  previous = current;
   curr_track.addEventListener("ended", nextTrack);
+  previous = current;
 }
 
 // when a current track is playing change it to pause symbol
@@ -82,23 +82,28 @@ function playpauseTrack() {
 
 // goes to the next song
 function nextTrack() {
-  previous = current;
-  randomMusic = current;
-  while (randomMusic === current) {
-    randomMusic = Math.floor(Math.random() * songList.length);
+  current++;
+  if(current == songList.length) {
+    current = 0;
   }
-  current = randomMusic;
-  curr_track.src = songList[current];
-  loadTrack();
-  playTrack();
+  curr_track.src = songList[current].path;
+  curr_track.load();
+  curr_track.play();
+
+  previous = current;
 }
 
 // goes back to the previous song
 function prevTrack() {
-  current = previous;
-  curr_track.src = songList[current];
-  loadTrack();
-  playTrack();
+  current--;
+  if (current < 0) {
+    current = songList.length - 1;
+  }
+  curr_track.src = songList[current].path;
+  curr_track.load();
+  curr_track.play();
+
+  previous = current;
 }
 
 // controls the volume
