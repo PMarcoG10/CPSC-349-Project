@@ -2,6 +2,9 @@
 Names: Marco Gabriel (887803609)  
        Luis Alvarado (888659596)
 
+## Link to the demo project
+https://cpsc-349-project.vercel.app/
+
 ## Pupose 
 The purpose of our website is to provide our users with a study space where they can listen to Lofi music and use a Pomodoro timer to help with their studying journey. 
 ![home_page](doc_images/home_page.png)
